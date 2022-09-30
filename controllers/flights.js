@@ -8,7 +8,7 @@ module.exports = {
 function index(req, res) {
     Flight.find({}, function(err, flights) {
         // render the flight index page, pass in flight object
-        res.render('flight/index', {
+        res.render('flights/index', {
             flights
         })
     })
