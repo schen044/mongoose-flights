@@ -6,3 +6,12 @@ body {
 a {
   color: #00B7FF;
 }
+
+nav a {
+  line-height: 3rem;
+  padding: 0 1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+  background-color: firebrick;
+}
