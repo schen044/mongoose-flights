@@ -3,7 +3,8 @@ var router = express.Router();
 const flightsCtrl = require('../controllers/flights');
 
 // all routes already start with /flights
-/* GET flight listing. */
+// GET /flights index
 router.get('/', flightsCtrl.index);
-
+// GET /flights/new new
+router.get('/new', flightsCtrl.new);
 module.exports = router;
