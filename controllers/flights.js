@@ -11,13 +11,16 @@ function index(req, res) {
     Flight.find({}, function(err, flights) {
         // render the flight index page, pass in flight object
         res.render('flights/index', {
+            title: 'All Flights',
             flights
         })
     })
 }
 
 function newFlight(req, res) {
-    res.render('flights/new');
+    res.render('flights/new', {
+        title: 'Add Flight'
+    });
 }
 
 function create(req, res) {
