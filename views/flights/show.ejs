@@ -54,6 +54,38 @@
   <% } else { %>
     <h5>No Destinations</h5>
   <% } %>
+
+<br><br><h2>Tickets</h2>
+<a href="/flights/<%= flight._id %>/tickets/new">New Ticket</a>
+<% if (tickets.length) { %>
+  <table>
+    <!--- Table Header -->
+    <thead>
+      <!--- Table Row -->
+      <tr>
+        <!--- Table Header Item -->
+        <th>Flight</th>
+        <th>Seat</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <!--- Table Body -->
+    <tbody>
+      <!--- Iterate through reviews array-->
+      <!--- Create a review row for each element -->
+      <% tickets.forEach(function(t) { %>
+        <tr>
+          <td><%= t.flight %></td>
+          <td><%= t.seat %></td>
+          <td>$<%= t.price %></td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+<% } else { %>
+  <h5>No Tickets</h5>
+<% } %>
+  
 </main>
 </body>
 </html>
