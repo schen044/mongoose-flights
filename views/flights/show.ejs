@@ -77,7 +77,7 @@
       <!--- Create a review row for each element -->
       <% tickets.forEach(function(t) { %>
         <tr>
-          <td><%= t.flight %></td>
+          <td><%= t.flight.flightNo %></td>
           <td><%= t.seat %></td>
           <td>$<%= t.price %></td>
         </tr>

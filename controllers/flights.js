@@ -41,10 +41,21 @@ function create(req, res) {
 
 function show(req, res) {
     Flight.findById(req.params.id, function(err, flight) {
-        Ticket.find({flight: flight._id}, function(err, tickets) {
+        Ticket.find({flight: flight._id})
+        .populate('flight').then(function(tickets) {
             res.render('flights/show', { 
                 title: 'Flight Info', flight, tickets
             })
         })
+    })
+}
+
+// async await version of above
+async function showOne(req, res) {
+    let flight = await Flight.findById(req.params.id);
+    let tickets = await Ticket.find({flight: flight._id})
+        .populate('flight');
+    res.render('flights/show',  { 
+        title: 'Flight Info', flight, tickets
     })
 }
