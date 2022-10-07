@@ -56,7 +56,9 @@
   <% } %>
 
 <br><br><h2>Tickets</h2>
-<a href="/flights/<%= flight._id %>/tickets/new">New Ticket</a>
+<div id="new-ticket">
+  <a href="/flights/<%= flight._id %>/tickets/new"><button type="button">New Ticket</button></a>
+</div>
 <% if (tickets.length) { %>
   <table>
     <!--- Table Header -->
